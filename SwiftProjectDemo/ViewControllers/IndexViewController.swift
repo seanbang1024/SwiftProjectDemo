@@ -23,11 +23,22 @@ class IndexViewController: UIViewController {
     
     
     func getData() -> () {
+
+//        let parameters = ["foo": "bar"]
+//        let urlString = "https://httpbin.org/get"
         
-//        let urlRequest = URLRequest(url: URL(string: "https://httpbin.org/get")!)
-//        let urlString = urlRequest.url?.absoluteString
-//        
-//        NSLog(urlString!)
+        let urlString = "http://api.juheapi.com/japi/toh"
+        let parameters = ["key" : "7528a751b7a7e3772a9845114b0d9e51", "v" : "1.0", "month" : "4", "day" : "13"]
+
+        HttpTools.requestData(.get, URLString: urlString, parameters: parameters) { (result) in
+            
+            print(result)
+            guard let dict = result as? [String : Any] else { return }
+            guard let arr = dict["data"] as? [[String : Any]] else { return }
+            print(arr)
+            
+
+        }
 
  
         

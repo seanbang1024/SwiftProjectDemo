@@ -10,7 +10,7 @@ target 'SwiftProjectDemo' do
     pod 'ObjectMapper'
     pod 'SwiftyJSON'
     pod 'SVProgressHUD'
-
+    pod 'HandyJSON'
 
 
   # Pods for SwiftProjectDemo
