@@ -25,6 +25,8 @@
 		A7BDBE551E9F1A2D00255A54 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BDBE4B1E9F1A2D00255A54 /* IndexViewController.swift */; };
 		A7BDBE561E9F1A2D00255A54 /* PersonSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BDBE4C1E9F1A2D00255A54 /* PersonSettingViewController.swift */; };
 		A7BDBE581E9F258800255A54 /* ProjectCommonFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BDBE571E9F258800255A54 /* ProjectCommonFrame.swift */; };
+		A7BDBE611E9F679700255A54 /* IndexListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BDBE601E9F679700255A54 /* IndexListModel.swift */; };
+		A7BDBE631E9F67D600255A54 /* DetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BDBE621E9F67D600255A54 /* DetailsModel.swift */; };
 		D36AFF4370D356C596AC60AC /* Pods_SwiftProjectDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D229DC67286E5583895ED239 /* Pods_SwiftProjectDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		A7BDBE4B1E9F1A2D00255A54 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		A7BDBE4C1E9F1A2D00255A54 /* PersonSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSettingViewController.swift; sourceTree = "<group>"; };
 		A7BDBE571E9F258800255A54 /* ProjectCommonFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCommonFrame.swift; sourceTree = "<group>"; };
+		A7BDBE601E9F679700255A54 /* IndexListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexListModel.swift; sourceTree = "<group>"; };
+		A7BDBE621E9F67D600255A54 /* DetailsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
 		D229DC67286E5583895ED239 /* Pods_SwiftProjectDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProjectDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7871C4B1F77934253C3ECB7 /* Pods-SwiftProjectDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectDemoUITests/Pods-SwiftProjectDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E9DCDA4E5DD8739B574E7FF0 /* Pods_SwiftProjectDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProjectDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +216,8 @@
 		A7BDBE411E9F1A2D00255A54 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A7BDBE601E9F679700255A54 /* IndexListModel.swift */,
+				A7BDBE621E9F67D600255A54 /* DetailsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -566,9 +572,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7BDBE581E9F258800255A54 /* ProjectCommonFrame.swift in Sources */,
+				A7BDBE631E9F67D600255A54 /* DetailsModel.swift in Sources */,
 				A7BDBE0B1E9E279F00255A54 /* AppDelegate.swift in Sources */,
 				A7BDBE4E1E9F1A2D00255A54 /* NavigationBaseViewController.swift in Sources */,
 				A7BDBE4F1E9F1A2D00255A54 /* TabBarBaseViewController.swift in Sources */,
+				A7BDBE611E9F679700255A54 /* IndexListModel.swift in Sources */,
 				A7BDBE501E9F1A2D00255A54 /* HelpRequset.swift in Sources */,
 				A7BDBE561E9F1A2D00255A54 /* PersonSettingViewController.swift in Sources */,
 				A7BDBE551E9F1A2D00255A54 /* IndexViewController.swift in Sources */,

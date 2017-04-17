@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import HandyJSON
+import SwiftyJSON
 
 
 class IndexViewController: UIViewController {
@@ -20,8 +22,7 @@ class IndexViewController: UIViewController {
         
         
     }
-    
-    
+
     func getData() -> () {
 
 //        let parameters = ["foo": "bar"]
@@ -31,18 +32,35 @@ class IndexViewController: UIViewController {
         let parameters = ["key" : "7528a751b7a7e3772a9845114b0d9e51", "v" : "1.0", "month" : "4", "day" : "13"]
 
         HttpTools.requestData(.get, URLString: urlString, parameters: parameters) { (result) in
-            
-            print(result)
+   
             guard let dict = result as? [String : Any] else { return }
-            guard let arr = dict["data"] as? [[String : Any]] else { return }
-            print(arr)
-            
+   
+            let arr:NSArray = dict["result"] as! NSArray
+            var modelArray = [IndexListModel]()
+            for obj in arr {
+                let object = JSONDeserializer<IndexListModel>.deserializeFrom(dict: obj as? NSDictionary)
+                print(object?.des! as Any)
+                modelArray.append(object!)
+                
+            }
+            print(modelArray)
 
         }
-
+        
+        
  
         
 
+        
+    }
+    
+    func toJSONString(dict:NSDictionary?)->String{
+        
+        let data = try? JSONSerialization.data(withJSONObject: dict!, options: JSONSerialization.WritingOptions.prettyPrinted)
+        
+        let strJson = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+        
+        return strJson! as String
         
     }
 
