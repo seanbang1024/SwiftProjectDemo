@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		8C68A8AE7825152421A9ED3E /* Pods_SwiftProjectDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4A58276B51C8AEEC3AD4CC /* Pods_SwiftProjectDemoTests.framework */; };
 		8C905524C1B440FA7D08F7B2 /* Pods_SwiftProjectDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DCDA4E5DD8739B574E7FF0 /* Pods_SwiftProjectDemoUITests.framework */; };
+		A765EA481EB04CC900EA3039 /* DictionaryOrStringTransformUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765EA471EB04CC900EA3039 /* DictionaryOrStringTransformUtils.swift */; };
+		A765EA4A1EB0757300EA3039 /* IndexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765EA491EB0757300EA3039 /* IndexTableViewCell.swift */; };
+		A765EA4D1EB08A8600EA3039 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765EA4C1EB08A8600EA3039 /* DetailsViewController.swift */; };
+		A765EA511EB186D800EA3039 /* HttpDataConfings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765EA501EB186D800EA3039 /* HttpDataConfings.swift */; };
+		A765EA571EB1E39200EA3039 /* UIView+GetFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765EA561EB1E39200EA3039 /* UIView+GetFrame.swift */; };
 		A7BDBE0B1E9E279F00255A54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BDBE0A1E9E279F00255A54 /* AppDelegate.swift */; };
 		A7BDBE101E9E279F00255A54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7BDBE0E1E9E279F00255A54 /* Main.storyboard */; };
 		A7BDBE121E9E279F00255A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BDBE111E9E279F00255A54 /* Assets.xcassets */; };
@@ -53,6 +58,11 @@
 		54B6C034649325F39FBCE35C /* Pods-SwiftProjectDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectDemoTests/Pods-SwiftProjectDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		8E6930831DDCD4965DF2DFDB /* Pods-SwiftProjectDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectDemo/Pods-SwiftProjectDemo.release.xcconfig"; sourceTree = "<group>"; };
 		92EDCF1F00F4229636863EA3 /* Pods-SwiftProjectDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProjectDemoTests/Pods-SwiftProjectDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A765EA471EB04CC900EA3039 /* DictionaryOrStringTransformUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryOrStringTransformUtils.swift; sourceTree = "<group>"; };
+		A765EA491EB0757300EA3039 /* IndexTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTableViewCell.swift; sourceTree = "<group>"; };
+		A765EA4C1EB08A8600EA3039 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		A765EA501EB186D800EA3039 /* HttpDataConfings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpDataConfings.swift; sourceTree = "<group>"; };
+		A765EA561EB1E39200EA3039 /* UIView+GetFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+GetFrame.swift"; sourceTree = "<group>"; };
 		A7BDBE071E9E279F00255A54 /* SwiftProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BDBE0A1E9E279F00255A54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7BDBE0F1E9E279F00255A54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -195,6 +205,9 @@
 			children = (
 				A7BDBE3E1E9F1A2D00255A54 /* HelpRequset.swift */,
 				A7BDBE571E9F258800255A54 /* ProjectCommonFrame.swift */,
+				A765EA471EB04CC900EA3039 /* DictionaryOrStringTransformUtils.swift */,
+				A765EA501EB186D800EA3039 /* HttpDataConfings.swift */,
+				A765EA561EB1E39200EA3039 /* UIView+GetFrame.swift */,
 			);
 			path = HelpTools;
 			sourceTree = "<group>";
@@ -261,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				A7BDBE4B1E9F1A2D00255A54 /* IndexViewController.swift */,
+				A765EA491EB0757300EA3039 /* IndexTableViewCell.swift */,
+				A765EA4C1EB08A8600EA3039 /* DetailsViewController.swift */,
 				A7BDBE4C1E9F1A2D00255A54 /* PersonSettingViewController.swift */,
 			);
 			path = ViewControllers;
@@ -363,6 +378,7 @@
 				TargetAttributes = {
 					A7BDBE061E9E279F00255A54 = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 76QPUB7455;
 						ProvisioningStyle = Automatic;
 					};
 					A7BDBE1A1E9E279F00255A54 = {
@@ -571,15 +587,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A765EA481EB04CC900EA3039 /* DictionaryOrStringTransformUtils.swift in Sources */,
 				A7BDBE581E9F258800255A54 /* ProjectCommonFrame.swift in Sources */,
+				A765EA4A1EB0757300EA3039 /* IndexTableViewCell.swift in Sources */,
 				A7BDBE631E9F67D600255A54 /* DetailsModel.swift in Sources */,
 				A7BDBE0B1E9E279F00255A54 /* AppDelegate.swift in Sources */,
 				A7BDBE4E1E9F1A2D00255A54 /* NavigationBaseViewController.swift in Sources */,
 				A7BDBE4F1E9F1A2D00255A54 /* TabBarBaseViewController.swift in Sources */,
+				A765EA571EB1E39200EA3039 /* UIView+GetFrame.swift in Sources */,
 				A7BDBE611E9F679700255A54 /* IndexListModel.swift in Sources */,
 				A7BDBE501E9F1A2D00255A54 /* HelpRequset.swift in Sources */,
 				A7BDBE561E9F1A2D00255A54 /* PersonSettingViewController.swift in Sources */,
 				A7BDBE551E9F1A2D00255A54 /* IndexViewController.swift in Sources */,
+				A765EA511EB186D800EA3039 /* HttpDataConfings.swift in Sources */,
+				A765EA4D1EB08A8600EA3039 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,10 +753,14 @@
 			baseConfigurationReference = 091061E5FC32F5D6AFB43956 /* Pods-SwiftProjectDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 76QPUB7455;
 				INFOPLIST_FILE = SwiftProjectDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Project.SwiftProjectDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -745,10 +770,14 @@
 			baseConfigurationReference = 8E6930831DDCD4965DF2DFDB /* Pods-SwiftProjectDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 76QPUB7455;
 				INFOPLIST_FILE = SwiftProjectDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Project.SwiftProjectDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

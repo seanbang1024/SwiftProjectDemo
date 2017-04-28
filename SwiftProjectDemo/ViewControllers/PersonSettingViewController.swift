@@ -17,7 +17,12 @@ class PersonSettingViewController: UIViewController {
         self.view.backgroundColor = UIColor.red
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
+        self.tabBarController?.navigationItem.title = "设置"
+
     }
 
     override func didReceiveMemoryWarning() {

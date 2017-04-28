@@ -22,6 +22,7 @@ class TabBarBaseViewController: UITabBarController {
         
         let indexVC = IndexViewController()
         let indexItem = UITabBarItem(title: "首页", image: UIImage.init(named: "index"), selectedImage: UIImage.init(named: "indexSelect"))
+        
         indexVC.tabBarItem = indexItem
         
         let setting = PersonSettingViewController()

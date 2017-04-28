@@ -11,58 +11,111 @@ import HandyJSON
 import SwiftyJSON
 
 
-class IndexViewController: UIViewController {
-
+class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var modelArray = [IndexListModel]()
+    var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.blue
+        self.view.backgroundColor = UIColor.white
+        
         getData()
+        createUI()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.tabBarController?.navigationItem.title = "首页"
+        
+    }
+    
+    func createUI() -> () {
+        self.title = "首页"
+        self.tableView = UITableView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - kTabBarH - kStatusBarH - kNavBarH), style: .plain)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.view.addSubview(self.tableView)
         
         
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let d = DetailsViewController()
+        self.navigationController?.pushViewController(d, animated: true)
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.modelArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var hegiht:CGFloat = 0.0
+        if self.modelArray.count > indexPath.row {
+            let cell = IndexTableViewCell()
+            cell.setData(model: self.modelArray[indexPath.row])
+            hegiht = cell.cellHegiht
+        }
+        return hegiht
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: "indexCell") as? IndexTableViewCell
+        if cell == nil {
+            cell = IndexTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "indexCell")
+        }
+//        cell?.textLabel?.text = "asdadas"
+        if self.modelArray.count > indexPath.row {
+            
+            cell?.setData(model: self.modelArray[indexPath.row])
+            
+        }
+        
 
+        return cell!
+        
+    }
+    
+    
     func getData() -> () {
 
-//        let parameters = ["foo": "bar"]
-//        let urlString = "https://httpbin.org/get"
         
         let urlString = "http://api.juheapi.com/japi/toh"
-        let parameters = ["key" : "7528a751b7a7e3772a9845114b0d9e51", "v" : "1.0", "month" : "4", "day" : "13"]
-
+        let parameters = ["key" : kJuheKey, "v" : "1.0", "month" : "4", "day" : "13"]
         HttpTools.requestData(.get, URLString: urlString, parameters: parameters) { (result) in
    
             guard let dict = result as? [String : Any] else { return }
+            print(dict)
    
             let arr:NSArray = dict["result"] as! NSArray
-            var modelArray = [IndexListModel]()
+            
             for obj in arr {
                 let object = JSONDeserializer<IndexListModel>.deserializeFrom(dict: obj as? NSDictionary)
                 print(object?.des! as Any)
-                modelArray.append(object!)
+                self.modelArray.append(object!)
                 
             }
-            print(modelArray)
+            self.tableView.reloadData()
 
         }
         
         
- 
+        
         
 
         
     }
     
-    func toJSONString(dict:NSDictionary?)->String{
-        
-        let data = try? JSONSerialization.data(withJSONObject: dict!, options: JSONSerialization.WritingOptions.prettyPrinted)
-        
-        let strJson = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        
-        return strJson! as String
-        
-    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
