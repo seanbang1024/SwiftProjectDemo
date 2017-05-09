@@ -24,7 +24,7 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         getData()
         createUI()
-        
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -94,13 +94,13 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
         HttpTools.requestData(.get, URLString: urlString, parameters: parameters) { (result) in
    
             guard let dict = result as? [String : Any] else { return }
-            print(dict)
+//            print(dict)
    
             let arr:NSArray = dict["result"] as! NSArray
             
             for obj in arr {
                 let object = JSONDeserializer<IndexListModel>.deserializeFrom(dict: obj as? NSDictionary)
-                print(object?.des! as Any)
+//                print(object?.des! as Any)
                 self.modelArray.append(object!)
                 
             }
@@ -108,11 +108,7 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         }
         
-        
-        
-        
-
-        
+ 
     }
     
 

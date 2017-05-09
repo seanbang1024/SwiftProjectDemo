@@ -47,7 +47,7 @@ class IndexTableViewCell: UITableViewCell {
         self.desLable.numberOfLines = 0
         
         self.timeLable = UILabel(frame: CGRect(x: self.picImage.LeftX, y: self.picImage.BottomY + 10, width: kScreenW - 20, height: 30))
-        self.addSubview(self.titleLable)
+        self.addSubview(self.timeLable)
         
         
  
@@ -59,7 +59,7 @@ class IndexTableViewCell: UITableViewCell {
         let url = URL(string: model.pic!)
         self.picImage.kf.setImage(with: url)
         self.desLable.text = model.des
-//        self.titleLable
+        self.timeLable.text = "\(model.year!)年\(model.month!)月\(model.day!)日"
         self.cellHegiht = self.timeLable.BottomY
         
         
