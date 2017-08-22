@@ -12,14 +12,14 @@ import HandyJSON
 class IndexListModel: HandyJSON {
     
     var _id:Int?;
-    var day:String?;//名称
-    var des:String?;//食物
-    var lunar:String?;//图片
-    var month:String?;//图片,
-    var pic:String?;//描述
-    var title:String?;//关键字
-    var year:String?;//资讯内容
-    
+    var day:String?//名称
+    var des:String?//食物
+    var lunar:String?//图片
+    var month:String?//图片,
+    var pic:String?//描述
+    var title:String?//关键字
+    var year:String?//资讯内容
+    var cellHeight:CGFloat = 0
     required init() {}
 
 }

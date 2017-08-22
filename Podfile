@@ -11,7 +11,7 @@ target 'SwiftProjectDemo' do
     pod 'SwiftyJSON'
     pod 'SVProgressHUD'
     pod 'HandyJSON'
-
+    pod 'ESPullToRefresh'
 
   # Pods for SwiftProjectDemo
 

@@ -26,7 +26,7 @@ class IndexTableViewCell: UITableViewCell {
     var lunarLable: UILabel!
     var timeLable: UILabel!
     var picImage: UIImageView!
-    var cellHegiht: CGFloat!
+    var cellH: CGFloat!
     
     
     
@@ -60,7 +60,9 @@ class IndexTableViewCell: UITableViewCell {
         self.picImage.kf.setImage(with: url)
         self.desLable.text = model.des
         self.timeLable.text = "\(model.year!)年\(model.month!)月\(model.day!)日"
-        self.cellHegiht = self.timeLable.BottomY
+        model.cellHeight = self.timeLable.BottomY
+        self.cellH = self.timeLable.BottomY
+
         
         
     }

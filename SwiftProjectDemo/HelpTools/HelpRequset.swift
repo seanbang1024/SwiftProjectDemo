@@ -15,8 +15,9 @@ enum MethodType {
     case post
 }
 
+
 class HttpTools {
-    //参数的finishedCallback闭包在26行使用了，而使用的环境又是一个闭包，则需要加@escaping
+    //参数的finishedCallback闭包使用了，而使用的环境又是一个闭包，则需要加@escaping
     class func requestData(_ type : MethodType, URLString : String, parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : Any) -> ()) {
         let method = type == .get ? HTTPMethod.get : HTTPMethod.post
         Alamofire.request(URLString, method: method, parameters: parameters).responseJSON { (response) in
@@ -27,4 +28,13 @@ class HttpTools {
             finishedCallback(result)
         }
     }
+}
+
+public class HttPHelp {
+    
+    class func help() {
+        
+
+    }
+    
 }

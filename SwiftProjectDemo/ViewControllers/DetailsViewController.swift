@@ -9,7 +9,11 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-
+//    typealias completedBlock = (Bool) -> Void
+//    
+//    var completed : completedBlock!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,13 +27,47 @@ class DetailsViewController: UIViewController {
         btn.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
         self.view.addSubview(btn)
         btn.addTarget(self, action:#selector(btnAction) , for: .touchUpInside)
+        
     }
     
     func btnAction() -> () {
         
-
+        //一般形式
+        
+        let calAdd:(Int,Int)->(Int) = {
+            (a:Int,b:Int) -> Int in
+            
+//            self.completed(true)
+            
+            return a + b
+        }
+        
+        print(calAdd(100,150))
         
         
+        
+        block()
+        
+        print(b1("123"))
+        
+    }
+    
+    
+    let block:()->() = {
+    
+    }
+    
+    let b1:(String) -> (String) = {
+        (s: String) -> String in
+        
+        return s
+    }
+    
+    let b2:(String) -> (String) = {
+        
+        (s1:String)->(String) in
+        
+        return s1
     }
 
     override func didReceiveMemoryWarning() {
