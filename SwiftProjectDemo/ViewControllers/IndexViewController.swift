@@ -24,7 +24,7 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.hexStringToColor(hexString: "#ef4351")
         
         
         createUI()

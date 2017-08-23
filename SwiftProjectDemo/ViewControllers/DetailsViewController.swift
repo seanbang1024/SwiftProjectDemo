@@ -24,7 +24,7 @@ class DetailsViewController: UIViewController {
         self.title = "详情"
         print(self.navigationController as Any)
         let btn = UIButton(type: .custom)
-        btn.backgroundColor = UIColor.red
+        btn.backgroundColor = UIColor.hexStringToColor(hexString: "0Xfea100")
         
         self.view.addSubview(btn)
         btn.addTarget(self, action:#selector(btnAction) , for: .touchUpInside)
