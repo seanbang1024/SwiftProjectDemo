@@ -12,7 +12,7 @@ target 'SwiftProjectDemo' do
     pod 'SVProgressHUD'
     pod 'HandyJSON'
     pod 'ESPullToRefresh'
-
+    pod 'SnapKit'
   # Pods for SwiftProjectDemo
 
   target 'SwiftProjectDemoTests' do

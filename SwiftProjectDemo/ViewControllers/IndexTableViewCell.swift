@@ -8,7 +8,7 @@
 
 import UIKit
 import Kingfisher
-
+import SnapKit
 class IndexTableViewCell: UITableViewCell {
     
 //    "_id" = 16950413;
@@ -36,33 +36,111 @@ class IndexTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         self.backgroundColor = UIColor.white
         
-        self.titleLable = UILabel(frame: CGRect(x: 10, y: 10, width: kScreenW, height: 50))
+        self.titleLable = UILabel()
         self.addSubview(self.titleLable)
         
-        self.picImage = UIImageView(frame: CGRect(x: self.titleLable.LeftX, y: self.titleLable.BottomY, width: 100, height: 100))
+        self.picImage = UIImageView()
         self.addSubview(self.picImage)
+        self.picImage.backgroundColor = UIColor.red
         
-        self.desLable = UILabel(frame: CGRect(x: self.picImage.RightX + 10, y: self.picImage.TopY, width: kScreenW - 20 - self.picImage.RightX, height: self.picImage.Height))
+        self.desLable = UILabel()
         self.addSubview(desLable)
         self.desLable.numberOfLines = 0
         
-        self.timeLable = UILabel(frame: CGRect(x: self.picImage.LeftX, y: self.picImage.BottomY + 10, width: kScreenW - 20, height: 30))
+        self.timeLable = UILabel()
         self.addSubview(self.timeLable)
+        
+    
+        
+
+        
+        self.titleLable.snp.makeConstraints { (make) in
+            
+            make.left.top.equalTo(10)
+            make.right.equalTo(-10)
+            make.height.equalTo(50)
+            
+        }
+
+        
+        self.picImage.snp.makeConstraints { (make) in
+            
+            make.top.equalTo(self.titleLable.snp.bottom).offset(10)
+            make.left.equalTo(self.titleLable.snp.left)
+            make.width.height.equalTo(100)
+            
+            
+        }
+
+        self.desLable.snp.makeConstraints { (make) in
+            
+            make.top.equalTo(self.picImage.snp.top)
+            make.left.equalTo(self.picImage.snp.right).offset(10)
+            make.right.equalTo(-10)
+            make.bottom.greaterThanOrEqualTo(self.picImage.snp.bottom)
+        }
+        
+        self.timeLable.snp.makeConstraints { (make) in
+        
+            make.top.equalTo(self.desLable.snp.bottom).offset(10)
+            make.left.equalTo(self.titleLable.snp.left)
+            make.right.equalTo(self.titleLable.snp.right)
+            make.height.equalTo(self.titleLable.snp.height)
+            make.bottom.equalTo(-10)
+        }
+        
         
         
  
     }
     
-    func setData(model: IndexListModel) -> () {
+    func setData(model: IndexListModel, indexrow: NSInteger) -> () {
         
         self.titleLable.text = model.title
         let url = URL(string: model.pic!)
         self.picImage.kf.setImage(with: url)
         self.desLable.text = model.des
         self.timeLable.text = "\(model.year!)年\(model.month!)月\(model.day!)日"
-        model.cellHeight = self.timeLable.BottomY
-        self.cellH = self.timeLable.BottomY
 
+////        model.cellHeight = self.timeLable.BottomY
+////        self.cellH = self.timeLable.BottomY
+//
+//        let picH = self.picImage.Height
+//        let desH = self.desLable.Height
+//        
+//        print("pich    " + "\(picH)")
+//        print("desH    " + "\(desH)")
+//        print("indexrow    " + "\(indexrow)")
+//        
+//        self.timeLable.snp.removeConstraints()
+//        if picH >= desH {
+////        if indexrow == 4 {
+//            
+//            self.timeLable.snp.updateConstraints { (make) in
+//                
+//                make.top.equalTo(self.picImage.snp.bottom).offset(10)
+//                make.left.equalTo(self.titleLable.snp.left)
+//                make.right.equalTo(self.titleLable.snp.right)
+//                make.height.equalTo(self.titleLable.snp.height)
+//                make.bottom.equalTo(-10)
+//
+//            }
+//            
+//        } else {
+//            
+//            self.timeLable.snp.updateConstraints({ (make) in
+//                
+//                make.top.equalTo(self.desLable.snp.bottom).offset(10)
+//                make.left.equalTo(self.titleLable.snp.left)
+//                make.right.equalTo(self.titleLable.snp.right)
+//                make.height.equalTo(self.titleLable.snp.height)
+//                make.bottom.equalTo(-10)
+//
+//                
+//            })
+//            
+//            
+//        }
         
         
     }

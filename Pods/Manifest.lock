@@ -4,6 +4,7 @@ PODS:
   - HandyJSON (1.6.1)
   - Kingfisher (3.6.2)
   - ObjectMapper (2.2.5)
+  - SnapKit (3.2.0)
   - SVProgressHUD (2.1.2)
   - SwiftyJSON (3.1.4)
 
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - HandyJSON
   - Kingfisher
   - ObjectMapper
+  - SnapKit
   - SVProgressHUD
   - SwiftyJSON
 
@@ -22,9 +24,10 @@ SPEC CHECKSUMS:
   HandyJSON: dcc98115467462a4749db81bc8a9052607600bdf
   Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
   ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: ae0965200aa6808ca8a65cc4352d6a13cbf0a5af
+PODFILE CHECKSUM: 923ed36407c8b866fa4e62760801ebe263d4fc6c
 
 COCOAPODS: 1.2.1

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SnapKit
+
 
 class DetailsViewController: UIViewController {
 //    typealias completedBlock = (Bool) -> Void
@@ -24,9 +26,22 @@ class DetailsViewController: UIViewController {
         let btn = UIButton(type: .custom)
         btn.backgroundColor = UIColor.red
         
-        btn.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
         self.view.addSubview(btn)
         btn.addTarget(self, action:#selector(btnAction) , for: .touchUpInside)
+        
+        
+        let v1 = UIView(frame: CGRect(x: 100, y: 300, width: 100, height: 100))
+        self.view.addSubview(v1)
+        v1.backgroundColor = UIColor.blue
+
+        
+        btn.snp.makeConstraints { (make) in
+            
+            make.top.equalTo(20)
+            make.left.equalTo(20)
+            make.size.equalTo(CGSize(width: 100, height: 100))
+        }
+        
         
     }
     

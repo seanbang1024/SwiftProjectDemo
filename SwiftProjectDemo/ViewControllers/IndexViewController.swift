@@ -49,11 +49,13 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view.addSubview(self.tableView)
-        
+        self.tableView.estimatedRowHeight = 44.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.register(IndexTableViewCell.self, forCellReuseIdentifier: "indexCell")
         
 //        self.tableView.showsVerticalScrollIndicator = false
 //        self.tableView.showsHorizontalScrollIndicator = false
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+//        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
 
 
@@ -94,38 +96,40 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return self.modelArray.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        print(indexPath.row)
-        
-        var hegiht:CGFloat = 0.0
-        if self.modelArray.count > indexPath.row {
-            let cell = IndexTableViewCell()
-            cell.setData(model: self.modelArray[indexPath.row])
-            hegiht = cell.cellH
-        }
-        return hegiht
-        
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        
+//        print(indexPath.row)
+//        
 //        var hegiht:CGFloat = 0.0
-//
-//        if (self.modelArray.count > indexPath.row) {
-//            
-//            let model:IndexListModel = self.modelArray[indexPath.row]
-//            hegiht = model.cellHeight
+//        if self.modelArray.count > indexPath.row {
+//            let cell = IndexTableViewCell()
+//            cell.setData(model: self.modelArray[indexPath.row])
+//            hegiht = cell.cellH
 //        }
 //        return hegiht
-
-    }
+//        
+////        var hegiht:CGFloat = 0.0
+////
+////        if (self.modelArray.count > indexPath.row) {
+////            
+////            let model:IndexListModel = self.modelArray[indexPath.row]
+////            hegiht = model.cellHeight
+////        }
+////        return hegiht
+//
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: "indexCell") as? IndexTableViewCell
-        if cell == nil {
-            cell = IndexTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "indexCell")
-        }
+//        var cell = tableView.dequeueReusableCell(withIdentifier: "indexCell") as? IndexTableViewCell
+//        if cell == nil {
+//            cell = IndexTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "indexCell")
+//        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "indexCell", for: indexPath) as? IndexTableViewCell
+        
         if self.modelArray.count > indexPath.row {
             
-            cell?.setData(model: self.modelArray[indexPath.row])
+            cell?.setData(model: self.modelArray[indexPath.row], indexrow: indexPath.row)
             
         }
 
