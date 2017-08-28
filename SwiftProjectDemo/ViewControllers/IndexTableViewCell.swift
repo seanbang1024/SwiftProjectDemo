@@ -102,45 +102,6 @@ class IndexTableViewCell: UITableViewCell {
         self.desLable.text = model.des
         self.timeLable.text = "\(model.year!)年\(model.month!)月\(model.day!)日"
 
-////        model.cellHeight = self.timeLable.BottomY
-////        self.cellH = self.timeLable.BottomY
-//
-//        let picH = self.picImage.Height
-//        let desH = self.desLable.Height
-//        
-//        print("pich    " + "\(picH)")
-//        print("desH    " + "\(desH)")
-//        print("indexrow    " + "\(indexrow)")
-//        
-//        self.timeLable.snp.removeConstraints()
-//        if picH >= desH {
-////        if indexrow == 4 {
-//            
-//            self.timeLable.snp.updateConstraints { (make) in
-//                
-//                make.top.equalTo(self.picImage.snp.bottom).offset(10)
-//                make.left.equalTo(self.titleLable.snp.left)
-//                make.right.equalTo(self.titleLable.snp.right)
-//                make.height.equalTo(self.titleLable.snp.height)
-//                make.bottom.equalTo(-10)
-//
-//            }
-//            
-//        } else {
-//            
-//            self.timeLable.snp.updateConstraints({ (make) in
-//                
-//                make.top.equalTo(self.desLable.snp.bottom).offset(10)
-//                make.left.equalTo(self.titleLable.snp.left)
-//                make.right.equalTo(self.titleLable.snp.right)
-//                make.height.equalTo(self.titleLable.snp.height)
-//                make.bottom.equalTo(-10)
-//
-//                
-//            })
-//            
-//            
-//        }
         
         
     }

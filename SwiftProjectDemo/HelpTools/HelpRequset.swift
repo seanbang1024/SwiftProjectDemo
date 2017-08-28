@@ -10,6 +10,10 @@ import UIKit
 
 import Alamofire
 
+var parametersDic : [String : Any]?
+var methodType : MethodType!
+var urlString : String!
+
 enum MethodType {
     case get
     case post
@@ -18,8 +22,10 @@ enum MethodType {
 
 class HttpTools {
     //参数的finishedCallback闭包使用了，而使用的环境又是一个闭包，则需要加@escaping
+    
     class func requestData(_ type : MethodType, URLString : String, parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : Any) -> ()) {
         let method = type == .get ? HTTPMethod.get : HTTPMethod.post
+        
         Alamofire.request(URLString, method: method, parameters: parameters).responseJSON { (response) in
             guard let result = response.result.value else {
                 print(response.result.error as Any)
@@ -28,13 +34,7 @@ class HttpTools {
             finishedCallback(result)
         }
     }
+ 
 }
 
-public class HttPHelp {
-    
-    class func help() {
-        
 
-    }
-    
-}

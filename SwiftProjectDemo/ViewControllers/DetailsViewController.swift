@@ -14,11 +14,17 @@ class DetailsViewController: UIViewController {
 //    typealias completedBlock = (Bool) -> Void
 //    
 //    var completed : completedBlock!
+    typealias blockString = (String) -> Void
+    var bString : blockString!
+    typealias blockBack = (Void) -> Void
+    var bBack : blockBack!
     
+//    var bb1 : ((Void) -> (Void))?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        bb1!()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.orange
         self.title = "详情"
@@ -33,7 +39,9 @@ class DetailsViewController: UIViewController {
         let v1 = UIView(frame: CGRect(x: 100, y: 300, width: 100, height: 100))
         self.view.addSubview(v1)
         v1.backgroundColor = UIColor.blue
-
+        v1.center = self.view.center
+        
+        
         
         btn.snp.makeConstraints { (make) in
             
@@ -48,11 +56,15 @@ class DetailsViewController: UIViewController {
     func btnAction() -> () {
         
         //一般形式
+        self.bString("sfsfsfsfsfsfsf")
+        
+        self.bBack()
         
         let calAdd:(Int,Int)->(Int) = {
             (a:Int,b:Int) -> Int in
             
 //            self.completed(true)
+            
             
             return a + b
         }

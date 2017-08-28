@@ -16,7 +16,7 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var modelArray = [IndexListModel]()
     var tableView = UITableView()
-    
+    let indexReq = IndexReq()
 
     
     
@@ -24,14 +24,18 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.hexStringToColor(hexString: "#ef4351")
+        self.view.backgroundColor = UIColor.hexStringToColor(hexString: "#ffffff")
         
         
         createUI()
-        getData1()
+        getData2()
         
         self.tableView.es_startPullToRefresh()
         
+        
+        
+        
+
 
         
         
@@ -58,7 +62,17 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
 
+        let headerV = IndexHeaderView()
+        
+        headerV.snp.makeConstraints { (make) in
+            
+            make.width.equalTo(kScreenW)
+            make.height.equalTo(200)
 
+        }
+        
+        self.tableView .layoutIfNeeded()
+        self.tableView.tableHeaderView = headerV
         
         self.tableView.es_addInfiniteScrolling {
             [unowned self] in
@@ -70,7 +84,10 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.tableView.es_noticeNoMoreData()
         }
         
+        
+        
     }
+    
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -78,6 +95,18 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //        print(indexPath.row)
         
         let d = DetailsViewController()
+        d.bBack = {
+            
+        }
+        
+        d.bString = {
+            
+            (s : String) in
+            
+            
+            print(s)
+        }
+        
         self.navigationController?.pushViewController(d, animated: true)
         
 
@@ -145,8 +174,15 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
             [unowned self] in
             
             
+
+            
+            
+            
             let urlString = "http://api.juheapi.com/japi/toh"
             let parameters = ["key" : kJuheKey, "v" : "1.0", "month" : "8", "day" : "21"]
+
+
+            
             HttpTools.requestData(.get, URLString: urlString, parameters: parameters) { (result) in
                 self.modelArray.removeAll()
                 self.tableView.es_stopPullToRefresh()
@@ -168,8 +204,7 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 
                 
-                print(self.modelArray.count)
-                print("==========")
+
             }
             
             
@@ -183,6 +218,31 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    func getData2() -> () {
+        
+        
+        self.tableView.es_addPullToRefresh {
+            
+            self.indexReq.requestData {
+                self.tableView.es_stopPullToRefresh()
+                self.modelArray = self.indexReq.parseData
+                self.tableView .reloadData()
+                print(self.indexReq.parseData.count)
+                
+                
+                for (i,v) in self.indexReq.parseData.enumerated() {
+                    
+                    print(v.day! + "=======\(i)============")
+                    
+                    
+                }
+                
+                
+            }
+            
+            
+        }
+    }
     
     func getData1() -> () {
         
